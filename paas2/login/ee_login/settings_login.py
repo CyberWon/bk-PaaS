@@ -24,3 +24,6 @@ LOGIN_TYPE = "bk_login"
 CUSTOM_LOGIN_VIEW = ""
 # 配置自定义验证是否登录的认证函数, 如：CUSTOM_AUTHENTICATION_BACKEND = 'ee_official_login.oauth.google.backends.OauthBackend'
 CUSTOM_AUTHENTICATION_BACKEND = ""
+
+IAM_LOGIN_VIEW = "ee_official_login.oauth.iam.views.login"
+IAM_AUTHENTICATION_BACKEND = "ee_official_login.oauth.iam.backends.OauthBackend"

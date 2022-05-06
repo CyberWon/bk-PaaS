@@ -73,7 +73,10 @@ def login_success_response(request, user_or_form, redirect_to, app_id):
         redirect_to = "/console/"
 
     # 设置用户登录
-    auth_login(request, user)
+    try:
+        auth_login(request, user)
+    except Exception as e:
+        pass
     # 记录登录日志
     record_login_log(request, username, app_id)
 

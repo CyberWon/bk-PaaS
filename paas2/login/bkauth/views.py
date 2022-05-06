@@ -86,6 +86,28 @@ class LoginView(LoginExemptMixin, View):
         custom_login_view = import_string(settings.CUSTOM_LOGIN_VIEW)
         return custom_login_view(request)
 
+class IAMLoginView(LoginExemptMixin, View):
+    """
+    IAM  Login
+    """
+
+    is_plain = False
+
+    @only_plain_xframe_options_exempt
+    def get(self, request):
+        # TODO1: from django.views.decorators.clickjacking import xframe_options_exempt
+        # TODO2: should check if the request from the legal domain
+        return self._login(request)
+
+    @only_plain_xframe_options_exempt
+    def post(self, request):
+        return self._login(request)
+
+    def _login(self, request):
+
+        # 调用自定义login view
+        custom_login_view = import_string("ee_official_login.oauth.iam.views.login")
+        return custom_login_view(request)
 
 def _bk_login(request):
     """
