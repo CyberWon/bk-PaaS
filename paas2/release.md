@@ -1,5 +1,16 @@
 Release Log
 ===============================
+# 2.12.55
+    - update: esb update monitor_v3, bk_log, itsm, gsekit confapis
+    - update: esb remove get_batch_users_platform_role.py, get_batch_user_platform_role.py
+
+# 2.12.54
+    - update: esb update monitor_v3, bk_log, iam confapis
+
+# 2.12.53
+    - fix: esb cmsi send_mail_with_smtp attachment type
+    - update: esb update monitor_v3 confapis
+
 # 2.12.52
     - update: esb update data/monitor_v3 confapis
 
